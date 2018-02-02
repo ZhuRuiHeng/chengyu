@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="img_box">
+        <view wx:for="{{imgArr}}" wx:key="{{index}}" style="background-image:url({{item}});background-size:100% 100%;" data-src="{{item}}" bindtap='prewImg'></view>
+    </view>
+    <!--图片边框  -->
+    <view class="img_border"></view>
+    <!-- 答案  -->
+    <view class="answer">
+        <view wx:for="{{answerArr}}" wx:key="{{index}}" data-idx="{{index}}" bindtap='pushAnswer' class="{{item.text?'has_text':''}} {{item.tiperror?'error':''}}">{{item.text}}</view>
+    </view>
+    <!-- 候选词  -->
+    <view class='font_box'>
+        <view class="font_in"  wx:for="{{textArr}}" wx:key="{{index}}">
+            <view  bindtap='slectText' wx:if="{{item?true:false}}" data-text="{{item}}" data-idx="{{index}}" class="{{item?'has_houxuan':''}}">{{item}}</view>
+            <view wx:else=''  data-text="{{item}}" data-idx="{{index}}" class="{{item?'has_houxuan':''}}">{{item}}</view>
+        </view>
+    </view>
+    <!-- 答案弹层 -->
+    <view class='answer_right_box' wx:if="{{winShow}}">
+        <view class="answer_in">
+            <view class="nav_top">
+                <view class="pingyin">{{currentTopic.pinyin}}</view>
+                <view class="chengyu">{{currentTopic.chengyu}}</view>
+            </view>
+            <view class="jieshi">
+                <view>解释:</view>
+                <view>{{currentTopic.diangu}}</view>
+            </view>
+            <view class="jieshi">
+                <view>出处:</view>
+                <view>{{currentTopic.chuchu}}</view>
+            </view>
+
+            <view class="next_btn" bindtap="nextTopic"></view>
+            <view class="tip">小提示:肌肤有问题就找禾葡兰</view>
+        </view>
+    </view>
+    <button class="share" bindtap="shareBtn">
+      
+    </button>
+</view>

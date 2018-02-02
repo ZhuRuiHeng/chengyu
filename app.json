@@ -1,0 +1,32 @@
+{
+  "pages":[
+    "pages/adver/adver",
+    "pages/more/more",
+    "pages/index/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#f7ac66",
+    "navigationBarTitleText": "看图猜成语",
+    "navigationBarTextStyle":"#fff"
+  },
+    "tabBar": {
+      "backgroundColor":"#c58c71",
+      "color": "#fff",
+      "borderStyle":"white",
+      "list": [
+        {
+          "pagePath": "pages/index/index",
+          "iconPath":"pages/image/home.png",
+          "selectedIconPath": "pages/image/home_active.png",
+          "text": "首页"
+        },
+        {
+          "pagePath": "pages/more/more",
+          "iconPath": "pages/image/more.png",
+          "selectedIconPath": "pages/image/more_active.png",
+          "text": "更多"
+        }
+      ]
+    }
+}
